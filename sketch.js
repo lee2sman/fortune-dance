@@ -92,9 +92,10 @@ function dance() {
              
           videos[whichVideo].play();
           isplaying=true;
+         console.log(videos[whichVideo].time(),videos[whichVideo].duration());
          }
      
-       if (videos[whichVideo].time() >= 3) {
+       if (videos[whichVideo].time() >= 59) {
            videoOver();
        }
         
@@ -119,7 +120,6 @@ function mousePressed(){
 }
 
 function keyPressed() {
-    console.log(videos.length);
     if (stage === 2) {
         if (keyCode === LEFT_ARROW) {
         //accepted
