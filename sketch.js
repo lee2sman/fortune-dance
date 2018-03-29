@@ -117,9 +117,30 @@ function mousePressed(){
         s = allFortunes[whichFortune];
         stage = 2;  
     }
+	if (stage === 2) {
+		if ((mouseX < width/2) && (mouseY > 3*height/4)){
+       			 //accepted
+       			 //pick random video from array
+       			 whichVideo = floor(random(videos.length)); 
+       			 console.log(whichVideo);
+       			 stage = 3;
+     		} 
+		if ((mouseX > width/2) && (mouseY > 3*height/4)){
+        		// not accepted
+        		whichFortune = floor(random(allFortunes.length)); 
+        		s = allFortunes[whichFortune];
+        		stage = 2;
+        	}
+    	}
+
 }
 
-function keyPressed() {
+function keyTyped(){
+    if (stage === 1){
+        whichFortune = floor(random(allFortunes.length)); //picks random fortune from list
+        s = allFortunes[whichFortune];
+        stage = 2;  
+    }
     if (stage === 2) {
         if (keyCode === LEFT_ARROW) {
         //accepted
